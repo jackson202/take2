@@ -1,0 +1,21 @@
+
+  <div *ngIf="team">
+      <div class="col-sm">
+
+          <table>
+      <tr>
+      <th>Home team </th>
+      <th>Away Team </th>
+      <th>Venue </th>
+      <th>Date </th>
+
+    </tr>
+  
+    <tr *ngFor= "let game of games | filterGame : team.name ; let i =index">
+      <td *ngIf="i<5"> {{ game.hteam }}</td>
+      <td *ngIf="i<5">  {{ game.ateam }}</td>   
+      <td *ngIf="i<5">  {{ game.venue }}</td>
+      <td *ngIf="i<5">  {{ game.date }}</td>
+    </table>
+</div>
+</div>

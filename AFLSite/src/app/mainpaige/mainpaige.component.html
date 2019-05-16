@@ -1,0 +1,22 @@
+
+    <div class="container">
+      <div class="row">
+          <div class="col-sm">
+
+    <table>
+    
+    <tr><th>Team</th><th>Logo</th></tr>
+    
+  
+    <tr *ngFor="let team of teams" [class.selected]="team === selectedTeam"
+    (click)="onSelect(team)">
+      <td>{{team.name}}</td>
+      <td><img src="https://squiggle.com.au/{{team.logo}}"></td>
+  
+
+    </tr>
+  </table>
+</div>
+    <app-team-info [team]="selectedTeam"></app-team-info>
+  </div>
+</div>
