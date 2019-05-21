@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MainpaigeComponent } from './mainpaige/mainpaige.component'
+import { mainpageComponent } from './mainpage/mainpage.component'
 
 import {NavbarComponent} from './navbar/navbar.component'
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,7 @@ import { TeamInfoComponent } from './team-info/team-info.component';
 
 @NgModule({
   declarations: [
-    AppComponent, MainpaigeComponent, NavbarComponent, TeamInfoComponent, FilterGamePipe
+    AppComponent, mainpageComponent, NavbarComponent, TeamInfoComponent, FilterGamePipe
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule],

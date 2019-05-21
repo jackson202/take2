@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainpaigeComponent } from './mainpaige.component';
+import { mainpageComponent } from './mainpage.component';
 
-describe('MainpaigeComponent', () => {
-  let component: MainpaigeComponent;
-  let fixture: ComponentFixture<MainpaigeComponent>;
+describe('mainpageComponent', () => {
+  let component: mainpageComponent;
+  let fixture: ComponentFixture<mainpageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainpaigeComponent ]
+      declarations: [ mainpageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainpaigeComponent);
+    fixture = TestBed.createComponent(mainpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

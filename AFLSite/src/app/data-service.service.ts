@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
-import {Team} from './team';
-import {Game} from './game';
+import {Team} from './Team';
+import {Game} from './Game';
 
 
 import { analyzeAndValidateNgModules } from '@angular/compiler';

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {DataServiceService} from '../data-service.service';
-import {Team} from '../team';
-import {Game} from '../game';
+import {Team} from '../Team';
+import {Game} from '../Game';
 
 
 @Component({
-  selector: 'app-mainpaige',
-  templateUrl: './mainpaige.component.html',
-  styleUrls: ['./mainpaige.component.css']
+  selector: 'app-mainpage',
+  templateUrl: './mainpage.component.html',
+  styleUrls: ['./mainpage.component.css']
 })
-export class MainpaigeComponent implements OnInit {
+export class mainpageComponent implements OnInit {
 
   teams:Team[];
   games:Game[];
