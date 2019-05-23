@@ -18,11 +18,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataServiceService } from './data-service.service';
 import { TeamInfoComponent } from './team-info/team-info.component';
 import { TipFilterPipe } from './tip-filter.pipe';
-import { FindCurrentRoundPipe } from './find-current-round.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent, mainpageComponent ,NavbarComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, FindCurrentRoundPipe
+    AppComponent, mainpageComponent ,NavbarComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
