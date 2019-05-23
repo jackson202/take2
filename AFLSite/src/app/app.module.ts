@@ -10,19 +10,22 @@ import { FormsModule } from '@angular/forms';
 import {FilterGamePipe} from './filter-game.pipe';
 
 import { AppComponent } from './app.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { RouterModule, Routes } from '@angular/router';
 
 import { DataServiceService } from './data-service.service';
 import { TeamInfoComponent } from './team-info/team-info.component';
+import { TipFilterPipe } from './tip-filter.pipe';
+import { FindCurrentRoundPipe } from './find-current-round.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent, mainpageComponent, NavbarComponent, TeamInfoComponent, FilterGamePipe
+    AppComponent, mainpageComponent ,NavbarComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, FindCurrentRoundPipe
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule],
+    BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [DataServiceService],
   bootstrap: [AppComponent]
 })

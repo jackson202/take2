@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
 import {Team} from './Team';
 import {Game} from './Game';
+import{Tip} from './Tip';
 
 
 import { analyzeAndValidateNgModules } from '@angular/compiler';
@@ -53,6 +54,35 @@ export class DataServiceService {
             item.year,
             item.date,
             item.id
+          )))
+        );
+          }
+
+          
+      getTips() : Observable<Tip[]> {
+   
+        return this.http.get('https://api.squiggle.com.au/?q=tips;year=2019').pipe(
+          map((data: any) => data.tips.map((item: any) => new Tip(
+            item.confidence,
+            item.bits,
+            item.gameid,
+            item.ateamid,
+            item.venue,
+            item.year,
+            item.correct,
+            item.date,
+            item.updated,
+            item.hteam,
+            item.tipteamid,
+            item.margin,
+            item.err,
+            item.tip,
+            item.ateam,
+            item.source,
+            item.sourceid,
+            item.hconfidence,
+            item.hteamid,
+            item.round
           )))
         );
           }

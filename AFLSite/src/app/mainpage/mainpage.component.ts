@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {DataServiceService} from '../data-service.service';
 import {Team} from '../Team';
 import {Game} from '../Game';
+import {Tip} from '../Tip';
 
 
 @Component({
@@ -14,12 +15,14 @@ export class mainpageComponent implements OnInit {
 
   teams:Team[];
   games:Game[];
+  tips:Tip[];
 
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
     this.getAFLTeams();
     this.getGames();
+    this.getTips();
 
   }
 
@@ -28,6 +31,10 @@ export class mainpageComponent implements OnInit {
   }
   getGames(): void {
     this.dataService.getGames().subscribe(temp => { this.games = temp;});
+  }
+
+  getTips(): void {
+    this.dataService.getTips().subscribe(temp => { this.tips = temp;});
   }
 
   selectedTeam: Team;

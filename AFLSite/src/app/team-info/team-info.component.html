@@ -1,5 +1,5 @@
 
-  <div *ngIf="team">
+ <div *ngIf="team  ">
       <div class="col-sm">
 <h2>Past Games this Season</h2>
           <table class="table" style="text-align:center;">
@@ -43,9 +43,36 @@
       <td *ngIf="i<5">  {{ game.ateam }}</td>   
       <td *ngIf="i<5">  {{ game.venue }}</td>
       <td *ngIf="i<5">  {{ game.date }}</td>
+            <td *ngIf="i<5">  {{ game.date }}</td>
+
       </tr>
+    </table>
+
+    <div class="col-sm">
+      <h2>next game</h2>
+      <table class="table" style="text-align:center;">  
+        <tr>
+            <th>Round </th>
+          <th>Home team </th>
+          <th>Away team </th>
+          <th>Venue </th>
+          <th>Date </th>
+          <th>Team predicted to win  </th>
+          <th>source </th>
+        </tr>
+
+    
+        <tr>
+    <tr *ngFor= "let tip of tips | tipFilter : team.name; let tip of tips " >
+       <td> {{ tip.round }}</td>     
+       <td>  {{ tip.hteam }}</td>   
+       <td>  {{ tip.ateam }}</td>   
+      <td>  {{ tip.venue }}</td>
+      <td>  {{ tip.date }}</td>
+      <td>  {{ tip.tip }}</td>
+      <td>  {{ tip.source }}</td>
+     </tr>
     </table>
 
     </div>
 
-</div>

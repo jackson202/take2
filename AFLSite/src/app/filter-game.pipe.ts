@@ -5,8 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterGamePipe implements PipeTransform {
 
-  transform(value: any[], teamId: String, played: number): any {
-  return   value.filter((item) => item.complete == played && (item.ateam == teamId || item.hteam == teamId))   
+  transform(value: any[], teamId: any, played: any): any {
+    if (!value) return value;
+    if (!teamId) return value;
+    if (!played) return value;
+    return   value.filter((item) => item.complete == played && (item.ateam == teamId || item.hteam == teamId))   
 
  };
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Team} from '../Team'
 import {Game} from '../Game'
+import {Tip} from '../Tip'
 import {Observable} from 'rxjs';
 import {DataServiceService} from '../data-service.service';
 
@@ -13,14 +14,21 @@ import {DataServiceService} from '../data-service.service';
 export class TeamInfoComponent implements OnInit {
   @Input() team: Team;
   @Input() game: Game;
+  @Input() tip: Tip;
 
 games:Game[];
+selectedValue: string = 'Selected Value';
 
 teams:Team[];
+tips:Tip[];
+selectedDay: string = '1';
+currentDate = new Date();
 
   ngOnInit() {
     this.getGames();
     this.getAFLTeams();
+    this.getTips();
+
 
 
   }
@@ -31,5 +39,15 @@ teams:Team[];
     getAFLTeams(): void {
       this.dataService.getTeams().subscribe(temp => { this.teams = temp;});
     }
+    selectChangeHandler (event: any) {
+      this.selectedDay = event.target.value;
+    }
   
+    getTips(): void {
+      this.dataService.getTips().subscribe(temp => { this.tips = temp;});
+    }
+
+    
+
+
 }
