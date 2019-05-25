@@ -1,8 +1,10 @@
 
  <div *ngIf="team  ">
+    <div id ="teamDisplay  ">
+
       <div class="col-sm">
 <h2>Past Games this Season</h2>
-          <table class="table" style="text-align:center;">
+          <table id = "contentToConvertGames"  class="table" style="text-align:center;">
         <tr>
         <th>Round</th>
         <th>Home Team </th>
@@ -27,7 +29,7 @@
 
 <div class="col-sm">
 <h2>Next Five Games</h2>
-<table class="table" style="text-align:center;">
+<table id = "contentToConvertNextGames"  class="table" style="text-align:center;">
       <tr>
       <th>Round </th>
       <th>Home team </th>
@@ -43,14 +45,14 @@
       <td *ngIf="i<5">  {{ game.ateam }}</td>   
       <td *ngIf="i<5">  {{ game.venue }}</td>
       <td *ngIf="i<5">  {{ game.date }}</td>
-            <td *ngIf="i<5">  {{ game.date }}</td>
 
       </tr>
     </table>
+  </div>
 
     <div class="col-sm">
       <h2>next game</h2>
-      <table class="table" style="text-align:center;">  
+      <table id = "contentToConvertTips" class="table" style="text-align:center;">  
         <tr>
             <th>Round </th>
           <th>Home team </th>
@@ -61,7 +63,7 @@
           <th>source </th>
         </tr>
 
-    
+
         <tr>
     <tr *ngFor= "let tip of tips | tipFilter : team.name; let tip of tips " >
        <td> {{ tip.round }}</td>     
@@ -73,6 +75,7 @@
       <td>  {{ tip.source }}</td>
      </tr>
     </table>
+    </div>
+              <button (click)="captureScreen()">Export</button>
 
     </div>
-

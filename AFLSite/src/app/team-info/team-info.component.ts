@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import {Team} from '../Team'
 import {Game} from '../Game'
 import {Tip} from '../Tip'
 import {Observable} from 'rxjs';
 import {DataServiceService} from '../data-service.service';
-
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 @Component({
   selector: 'app-team-info',
   templateUrl: './team-info.component.html',
@@ -32,6 +33,7 @@ currentDate = new Date();
 
 
   }
+    
   constructor(private dataService: DataServiceService) { }
   getGames(): void {
     this.dataService.getGames().subscribe(temp => { this.games = temp;});
@@ -47,7 +49,52 @@ currentDate = new Date();
       this.dataService.getTips().subscribe(temp => { this.tips = temp;});
     }
 
-    
+    public captureScreen()
+{
+var dataGames = document.getElementById('contentToConvertGames');
+var dataGamesNext = document.getElementById('contentToConvertNextGames');
+var dataTips = document.getElementById('contentToConvertTips');
 
+var imgWidth = 208;
+var pageHeight = 295;
+let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+var position = 0;
+
+html2canvas(dataGames).then(canvas => {
+// Few necessary setting options
+
+var imgHeight = canvas.height * imgWidth / canvas.width;
+var heightLeft = imgHeight;
+const contentDataURL = canvas.toDataURL('image/png')
+pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+pdf.addPage();
+
+});
+
+
+html2canvas(dataGamesNext).then(canvas => {
+  // Few necessary setting options
+  
+  var imgHeight = canvas.height * imgWidth / canvas.width;
+  var heightLeft = imgHeight;
+  const contentDataURL = canvas.toDataURL('image/png')
+  pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+  pdf.addPage();
+  
+  });
+
+html2canvas(dataTips).then(canvas => {
+  // Few necessary setting options
+  
+  var imgHeight = canvas.height * 140 / canvas.width;
+  var heightLeft = imgHeight;
+  const contentDataURL = canvas.toDataURL('image/png')
+  pdf.addImage(contentDataURL, 'PNG', 0, 0, imgWidth, imgHeight)
+pdf.save('AFL.pdf'); // Generated PDF
+
+  });
+
+
+}
 
 }
