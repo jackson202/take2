@@ -15,7 +15,31 @@
             </select>
           </div>
      
-          <button type="submit" class="btn btn-success" (click)="t1 = team1; t2 = team2;">Submit</button>
+          <button type="submit" class="btn btn-success" (click)="t1 = team1; t2 = team2; display = true;">Submit</button>
      
         </form>
+
+</div>
+
+        <div *ngIf="display">
+            <table class="table">
+            <tr>
+            <th>Round</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Venue </th>
+            <th>Winner </th>
+            </tr>
+    
+    
+    <tr *ngFor= "let game of games | filterGame : team1.name : team2.name">
+        <td>{{ game.round }}</td>     
+          <td >{{ game.hteam }}</td>
+          <td >{{ game.ateam }}</td>   
+          <td >{{ game.venue }}</td>
+          <td >{{ game.winner }}</td>
+        </tr>
+                  </table>
+    
+    
     </div>

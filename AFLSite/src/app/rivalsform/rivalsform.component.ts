@@ -14,9 +14,11 @@ export class RivalsformComponent implements OnInit {
   teams:Team[];
   games:Game[];
 
-  t1:Team[];
-  t2:Team[];
+  t1: Team;
+  t2: Team;
 
+  display: false;
+  
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
