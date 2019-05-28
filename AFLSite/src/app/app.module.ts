@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { mainpageComponent } from './mainpage/mainpage.component'
 
-import {NavbarComponent} from './navbar/navbar.component'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {FilterGamePipe} from './filter-game.pipe';
@@ -24,7 +23,7 @@ const appRoutes: Routes = [ { path: 'rivalsform', component: RivalsformComponent
 
 @NgModule({
   declarations: [
-    AppComponent, mainpageComponent ,NavbarComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, RivalsformComponent
+    AppComponent, mainpageComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, RivalsformComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
