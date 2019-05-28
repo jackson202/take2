@@ -1,0 +1,21 @@
+    <div class="container">
+        <h1>Rival Selection</h1>
+        <form>
+          <div class="form-group">
+            <label for="team1">Team 1</label>
+            <select ngModel="Team[]" class="form-control" id="Team1" required>
+            	<option value="" selected disabled hidden>Select Team</option>
+            	<option *ngFor="let team of teams" [ngValue]="team1">{{team.name}}</option>
+            </select>
+
+            <label for="team1">Team 2</label>
+            <select ngModel="Team[]" class="form-control" id="Team2" required>
+            	<option value="" selected disabled hidden>Select Team</option>
+            	<option *ngFor="let team of teams" [ngValue]="team2">{{team.name}}</option>
+            </select>
+          </div>
+     
+          <button type="submit" class="btn btn-success" (click)="t1 = team1; t2 = team2;">Submit</button>
+     
+        </form>
+    </div>

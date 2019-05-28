@@ -1,41 +1,44 @@
 
- <div *ngIf="team  ">
-    <div id ="teamDisplay  ">
-
+ <div *ngIf="team">
+    <div id ="teamDisplay">
+<img src="https://squiggle.com.au/{{team.logo}}">
       <div class="col-sm">
+        <div class="tbl">
 <h2>Past Games this Season</h2>
-          <table id = "contentToConvertGames"  class="table" style="text-align:center;">
+          <table id = "contentToConvertGames"  class="table">
         <tr>
         <th>Round</th>
-        <th>Home Team </th>
-        <th>Away Team </th>
+        <th>Home Team</th>
+        <th>Away Team</th>
         <th>Venue </th>
         <th>Winner </th>
         </tr>
 
 
 <tr *ngFor= "let game of games | filterGame : team.name : 100">
-    <td> {{ game.round }}</td>     
-      <td > {{ game.hteam }}</td>
-      <td >  {{ game.ateam }}</td>   
-      <td >  {{ game.venue }}</td>
-      <td >  {{ game.winner }}</td>
+    <td>{{ game.round }}</td>     
+      <td >{{ game.hteam }}</td>
+      <td >{{ game.ateam }}</td>   
+      <td >{{ game.venue }}</td>
+      <td >{{ game.winner }}</td>
     </tr>
               </table>
 
 
 
 </div>
+</div>
 
 <div class="col-sm">
+  <div class="tbl">
 <h2>Next Five Games</h2>
-<table id = "contentToConvertNextGames"  class="table" style="text-align:center;">
+<table id = "contentToConvertNextGames"  class="table">
       <tr>
-      <th>Round </th>
-      <th>Home team </th>
-      <th>Away Team </th>
-      <th>Venue </th>
-      <th>Date </th>
+      <th>Round</th>
+      <th>Home Team</th>
+      <th>Away Team</th>
+      <th>Venue</th>
+      <th>Date</th>
 
     </tr>
   
@@ -49,18 +52,20 @@
       </tr>
     </table>
   </div>
+</div>
 
     <div class="col-sm">
-      <h2>next game</h2>
-      <table id = "contentToConvertTips" class="table" style="text-align:center;">  
+      <div class="tbl">
+      <h2>Next Game Prediction</h2>
+      <table id = "contentToConvertTips" class="table">  
         <tr>
-            <th>Round </th>
-          <th>Home team </th>
-          <th>Away team </th>
+          <th>Round</th>
+          <th>Home Team</th>
+          <th>Away Team</th>
           <th>Venue </th>
           <th>Date </th>
-          <th>Team predicted to win  </th>
-          <th>source </th>
+          <th>Prediction</th>
+          <th>Source</th>
         </tr>
 
 
@@ -76,6 +81,7 @@
      </tr>
     </table>
     </div>
-              <button (click)="captureScreen()">Export</button>
+  </div>
 
-    </div>
+    <button class="btn btn-outline-dark" (click)="captureScreen()"> <strong>Export to PDF</strong></button>
+            </div>
