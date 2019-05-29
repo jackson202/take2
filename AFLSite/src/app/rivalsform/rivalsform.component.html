@@ -1,27 +1,28 @@
-    <div class="container">
-        <h1>Rival Selection</h1>
-        <form>
-          <div class="form-group">
-            <label for="team1">Team 1</label>
-            <select ngModel="Team[]" class="form-control" id="Team1" required>
-            	<option value="" selected disabled hidden>Select Team</option>
-            	<option *ngFor="let team of teams" [ngValue]="team1">{{team.name}}</option>
-            </select>
+<div class="container">
+    <h1>Rival Selection</h1>
+    <form #RivalForm="ngForm" name="RivalForm">
+      <div class="form-group">
+        <label>Team 1</label>
+        <select name="team1" class="form-control" required ngModel>
+            <option value="" selected disabled hidden>Select Team</option>
+            <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+        </select>
 
-            <label for="team1">Team 2</label>
-            <select ngModel="Team[]" class="form-control" id="Team2" required>
-            	<option value="" selected disabled hidden>Select Team</option>
-            	<option *ngFor="let team of teams" [ngValue]="team2">{{team.name}}</option>
-            </select>
-          </div>
-     
-          <button type="submit" class="btn btn-success" (click)="t1 = team1; t2 = team2; display = true;">Submit</button>
-     
-        </form>
-
+        <label>Team 2</label>
+        <select name="team2" class="form-control" required ngModel>
+            <option value="" selected disabled hidden>Select Team</option>
+            <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+        </select>
+      </div>
+ 
+      <div class="button"><button type="submit" class="btn btn-success" (click)="submitted = true;">Submit</button>
+      <button type="button" class="btn btn-warning" (click)="submitted = false; this.RivalForm.reset()">Reset</button></div>
+ 
+    </form>
 </div>
 
-        <div *ngIf="display">
+
+        <div *ngIf="submitted">
             <table class="table">
             <tr>
             <th>Round</th>
@@ -32,7 +33,7 @@
             </tr>
     
     
-    <tr *ngFor= "let game of games | filterGame : team1.name : team2.name">
+    <tr *ngFor= "let game of games | rivalTeamFinder : RivalForm.value.team1 : RivalForm.value.team2">
         <td>{{ game.round }}</td>     
           <td >{{ game.hteam }}</td>
           <td >{{ game.ateam }}</td>   

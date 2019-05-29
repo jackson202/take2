@@ -18,12 +18,13 @@ import { DataServiceService } from './data-service.service';
 import { TeamInfoComponent } from './team-info/team-info.component';
 import { TipFilterPipe } from './tip-filter.pipe';
 import { RivalsformComponent } from './rivalsform/rivalsform.component';
+import { RivalTeamFinderPipe } from './rival-team-finder.pipe';
 
 const appRoutes: Routes = [ { path: 'rivalsform', component: RivalsformComponent }];
 
 @NgModule({
   declarations: [
-    AppComponent, mainpageComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, RivalsformComponent
+    AppComponent, mainpageComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, RivalsformComponent, RivalTeamFinderPipe
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
