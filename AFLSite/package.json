@@ -25,6 +25,7 @@
     "html2canvas": "^1.0.0-rc.1",
     "jquery": "^3.4.1",
     "jspdf": "^1.5.3",
+    "magnifico": "^1.0.0",
     "ngx-select-dropdown": "^1.0.1",
     "popper": "^1.0.1",
     "rxjs": "^6.3.3",
