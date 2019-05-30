@@ -10,6 +10,7 @@ import {FilterGamePipe} from './filter-game.pipe';
 
 import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 
 import { RouterModule, Routes } from '@angular/router';
@@ -19,15 +20,16 @@ import { TeamInfoComponent } from './team-info/team-info.component';
 import { TipFilterPipe } from './tip-filter.pipe';
 import { RivalsformComponent } from './rivalsform/rivalsform.component';
 import { RivalTeamFinderPipe } from './rival-team-finder.pipe';
+import { TeamgraphComponent } from './teamgraph/teamgraph.component';
 
-const appRoutes: Routes = [ { path: 'rivalsform', component: RivalsformComponent }];
+const appRoutes: Routes = [ { path: 'rivalsform', component: RivalsformComponent }, { path: 'teamgraph', component: TeamgraphComponent }];
 
 @NgModule({
   declarations: [
-    AppComponent, mainpageComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, RivalsformComponent, RivalTeamFinderPipe
+    AppComponent, mainpageComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, RivalsformComponent, RivalTeamFinderPipe, TeamgraphComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes)],
+    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes), GoogleChartsModule],
   providers: [DataServiceService],
   bootstrap: [AppComponent]
 })

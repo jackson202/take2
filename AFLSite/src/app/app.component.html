@@ -20,6 +20,9 @@
       <li class="nav-item "  >
           <a class="nav-link"   (click)="makeTrue()">Text to speech</a>
         </li>
+      <li class="nav-item "  >
+          <a class="nav-link" [routerLink] = "['/teamgraph']" (click)="showComponent()">Team Graphs</a>
+        </li>
           </ul>
   </div>
 
@@ -33,3 +36,5 @@
 <h2><router-outlet></router-outlet> </h2>
   </div>
   </div>
+
+

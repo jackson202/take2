@@ -1,0 +1,37 @@
+<head>
+      <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+      </script>
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['corechart']});     
+      </script>
+</head>
+<h1>Team Graphs</h1>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+        <form #RivalForm="ngForm" name="RivalForm">
+          <div class="form-group" style="padding: 30px">
+            <label>Select a Team</label>
+            <select name="team1" class="form-control" required ngModel>
+                <option value="" selected disabled hidden>Select Team</option>
+                <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+            </select>
+        </div>
+    </form>  
+  </div>
+
+  <div class="column" style="background-color:#bbb;">
+
+    <div id="googlechart">
+  <google-chart #chart
+   [title]="title"
+   [type]="type"
+   [data]="data"
+   [columnNames]="columnNames"
+   [options]="options"
+   [width]="width"
+   [height]="height">
+</google-chart>
+  </div>
+  </div>
+</div>
