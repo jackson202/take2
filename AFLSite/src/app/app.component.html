@@ -1,7 +1,7 @@
 <div></div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">
-      <img src="../assets/AFLLogo.png" width="75" height="75" class="d-inline-block align-top" alt="">
+      <img src="../assets/AFLLogo.png" width="75" height="75" class="d-inline-block align-top" alt="AFL Logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -17,11 +17,14 @@
       <li class="nav-item "  >
         <a class="nav-link"  [routerLink] = "['/rivalsform']" (click)="showComponent()">Rivals</a>
       </li>
-      <li class="nav-item "  >
-          <a class="nav-link"   (click)="makeTrue()">Text to speech</a>
-        </li>
+
       <li class="nav-item "  >
           <a class="nav-link" [routerLink] = "['/teamgraph']" (click)="showComponent()">Team Graphs</a>
+        </li>
+       <li class="nav-item "  >
+          <button type="button" class="nav-link btn btn-warning " (click)="toggleTTS()">
+            <img src="../assets/listened-clipart-5.png" width="50" height="40" alt="Text to speech button">
+          </button>
         </li>
           </ul>
   </div>

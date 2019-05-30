@@ -15,13 +15,19 @@ export class AppComponent {
  show: boolean = true;
  speak: boolean = false;
 
+
 showComponent(){
   this.show = !this.show;
 }
 
-makeTrue()
-{
-  this.speak = true;
+toggleTTS() 
+{ 
+  if (this.speak === false){
+  this.speak = true
+  }
+  else {
+  this.speak = false
+  }
 }
 
 sayText()

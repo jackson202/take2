@@ -15,8 +15,8 @@
         </select>
       </div>
  
-      <div class="button"><button type="submit" class="btn btn-success" (click)="submitted = true;">Submit</button>
-      <button type="button" class="btn btn-warning" (click)="submitted = false; this.RivalForm.reset()">Reset</button></div>
+      <button type="submit" class="btn btn-success" (click)="submitted = true;">Submit</button>
+      <button type="button" class="btn btn-danger" (click)="submitted = false; this.RivalForm.reset()">Clear</button>
  
     </form>
 </div>
@@ -27,7 +27,9 @@
             <tr>
             <th>Round</th>
             <th>Home Team</th>
+            <th>Score</th>
             <th>Away Team</th>
+            <th>Score</th>
             <th>Venue </th>
             <th>Winner </th>
             </tr>
@@ -35,10 +37,12 @@
     
     <tr *ngFor= "let game of games | rivalTeamFinder : RivalForm.value.team1 : RivalForm.value.team2">
         <td>{{ game.round }}</td>     
-          <td >{{ game.hteam }}</td>
-          <td >{{ game.ateam }}</td>   
-          <td >{{ game.venue }}</td>
-          <td >{{ game.winner }}</td>
+        <td>{{ game.hteam }}</td>
+        <td>{{ game.hgoals }}-{{ game.hbehinds }}-{{ game.hscore }}</td>
+        <td>{{ game.ateam }}</td>
+        <td>{{ game.agoals }}-{{ game.abehinds }}-{{ game.ascore }}</td>
+        <td>{{ game.venue }}</td>
+        <td>{{ game.winner }}</td>
         </tr>
                   </table>
     

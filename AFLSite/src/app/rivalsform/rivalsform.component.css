@@ -1,3 +1,16 @@
 h1 {
 	text-align:center;
 }
+
+table {
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+#rivals {
+    padding-top: 20px;
+}
+
+.btn-success {
+    margin-right: 10px;
+}

@@ -18,6 +18,11 @@ table {
 	text-align:center;
 }
 
+.btn {
+	position: absolute;
+	right: 10px;
+	padding-right: 10px;
+}
 
 
-  
+.btn:focus {background-color: red;}
