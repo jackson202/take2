@@ -23,13 +23,15 @@
 
 
         <div *ngIf="submitted">
-            <table class="table">
+            <table id = "contentToConvertRivals"class="table">
             <tr>
             <th>Round</th>
             <th>Home Team</th>
-            <th>Score</th>
+            <th>Home team goals-Home team behinds</th>
+            <th>Home team Score</th>
             <th>Away Team</th>
-            <th>Score</th>
+            <th>Away team goals-Away team behinds</th>
+            <th>Away team Score</th>          
             <th>Venue </th>
             <th>Winner </th>
             </tr>
@@ -38,13 +40,16 @@
     <tr *ngFor= "let game of games | rivalTeamFinder : RivalForm.value.team1 : RivalForm.value.team2">
         <td>{{ game.round }}</td>     
         <td>{{ game.hteam }}</td>
-        <td>{{ game.hgoals }}-{{ game.hbehinds }}-{{ game.hscore }}</td>
+        <td>{{ game.hgoals }}-{{ game.hbehinds }}</td>
+        <td>{{ game.hscore }}</td>
         <td>{{ game.ateam }}</td>
-        <td>{{ game.agoals }}-{{ game.abehinds }}-{{ game.ascore }}</td>
+        <td>{{ game.agoals }}-{{ game.abehinds }}</td>
+        <td>{{ game.ascore }}</td>
         <td>{{ game.venue }}</td>
         <td>{{ game.winner }}</td>
         </tr>
                   </table>
     
-    
+                  <button class="btn btn-outline-dark" (click)="captureScreen()"> <strong>Export to PDF</strong></button>
+
     </div>

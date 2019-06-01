@@ -57,11 +57,10 @@ var dataTips = document.getElementById('contentToConvertTips');
 
 var imgWidth = 208;
 var pageHeight = 295;
-let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+let pdf = new jspdf('p', 'mm', 'a4'); 
 var position = 0;
 
 html2canvas(dataGames).then(canvas => {
-// Few necessary setting options
 
 var imgHeight = canvas.height * imgWidth / canvas.width;
 var heightLeft = imgHeight;
@@ -73,7 +72,6 @@ pdf.addPage();
 
 
 html2canvas(dataGamesNext).then(canvas => {
-  // Few necessary setting options
   
   var imgHeight = canvas.height * imgWidth / canvas.width;
   var heightLeft = imgHeight;
@@ -84,13 +82,12 @@ html2canvas(dataGamesNext).then(canvas => {
   });
 
 html2canvas(dataTips).then(canvas => {
-  // Few necessary setting options
   
   var imgHeight = canvas.height * 140 / canvas.width;
   var heightLeft = imgHeight;
   const contentDataURL = canvas.toDataURL('image/png')
   pdf.addImage(contentDataURL, 'PNG', 0, 0, imgWidth, imgHeight)
-pdf.save('AFL.pdf'); // Generated PDF
+pdf.save('AFL.pdf'); 
 
   });
 

@@ -35,8 +35,8 @@ export class TeamgraphComponent implements OnInit {
   title = 'Win/Loss Ratio';
    type = 'PieChart';
    data = [
-      ['Firefox', 45.0],
-      ['IE', 26.8],
+      ['win', 45.0],
+      ['Loss', 26.8],
    ];
    columnNames = ['Win', 'Loss'];
    options = {    
@@ -45,3 +45,7 @@ export class TeamgraphComponent implements OnInit {
    height = 400;
 
 }
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+  
+  }
