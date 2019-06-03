@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Team } from './Team';
 import { Game } from './Game';
 import { Tip } from './Tip';
+import { Ladder } from './Ladder';
+
 var DataServiceService = /** @class */ (function () {
     function DataServiceService(http) {
         this.http = http;
@@ -18,6 +20,7 @@ var DataServiceService = /** @class */ (function () {
     DataServiceService.prototype.getTips = function () {
         return this.http.get('https://api.squiggle.com.au/?q=tips;year=2019').pipe(map(function (data) { return data.tips.map(function (item) { return new Tip(item.confidence, item.bits, item.gameid, item.ateamid, item.venue, item.year, item.correct, item.date, item.updated, item.hteam, item.tipteamid, item.margin, item.err, item.tip, item.ateam, item.source, item.sourceid, item.hconfidence, item.hteamid, item.round); }); }));
     };
+
     DataServiceService = tslib_1.__decorate([
         Injectable({
             providedIn: 'root'

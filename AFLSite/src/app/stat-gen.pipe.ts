@@ -9,6 +9,7 @@ export class StatGenPipe implements PipeTransform {
 
   transform(value: Game[], team: String): any {
     let record: number[] = [0, 0];
+    var b = 0;
     for (var i = 0; i < value.length ; i++) {
       if(value[i].ateam == team ||  value[i].hteam == team)
       {
@@ -23,13 +24,14 @@ export class StatGenPipe implements PipeTransform {
           record[1] = record[1] + 1;
 
         }
-      }
+      }      
       }
   }
+  var b = record[0] + record[1];
+
   var data = [
-    [record[0]],
-    [record[1],
- ]
+    record[0],
+    record[1]
 ]
    return data;
   }
