@@ -21,12 +21,14 @@ import { TipFilterPipe } from './tip-filter.pipe';
 import { RivalsformComponent } from './rivalsform/rivalsform.component';
 import { RivalTeamFinderPipe } from './rival-team-finder.pipe';
 import { TeamgraphComponent } from './teamgraph/teamgraph.component';
+import { ChartsComponent } from './charts/charts.component';
+import { StatGenPipe } from './stat-gen.pipe';
 
 const appRoutes: Routes = [ { path: 'rivalsform', component: RivalsformComponent }, { path: 'teamgraph', component: TeamgraphComponent }];
 
 @NgModule({
   declarations: [
-    AppComponent, mainpageComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, RivalsformComponent, RivalTeamFinderPipe, TeamgraphComponent
+    AppComponent, mainpageComponent, TeamInfoComponent, FilterGamePipe, TipFilterPipe, RivalsformComponent, RivalTeamFinderPipe, TeamgraphComponent, ChartsComponent, StatGenPipe
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, RouterModule.forRoot(appRoutes), GoogleChartsModule],

@@ -9,29 +9,19 @@
 
 <div class="row">
   <div class="column" style="background-color:#aaa;">
-        <form #RivalForm="ngForm" name="RivalForm">
+        <form #RivalForm="ngForm" name="RivalForm" >
           <div class="form-group" style="padding: 30px">
             <label>Select a Team</label>
-            <select name="team1" class="form-control" required ngModel>
+            <select name="team1" class="form-control" required ngModel >
                 <option value="" selected disabled hidden>Select Team</option>
-                <option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+                <option *ngFor="let team of teams" [ngValue]="team" >{{team.name}}</option>
             </select>
         </div>
     </form>  
   </div>
 
-  <div class="column" style="background-color:#bbb;">
+  <div *ngIf="RivalForm.value.team1">
+    
+      <app-charts [team]="RivalForm.value.team1"></app-charts>
 
-    <div id="googlechart">
-  <google-chart #chart
-   [title]="title"
-   [type]="type"
-   [data]="data"
-   [columnNames]="columnNames"
-   [options]="options"
-   [width]="width"
-   [height]="height">
-</google-chart>
-  </div>
-  </div>
 </div>

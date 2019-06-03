@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {DataServiceService} from '../data-service.service';
 import {Team} from '../Team';
+
 import {Game} from '../Game';
 
 @Component({
@@ -17,7 +18,7 @@ export class TeamgraphComponent implements OnInit {
 
   display: false;
 
-
+submitted: false;
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
@@ -32,20 +33,7 @@ export class TeamgraphComponent implements OnInit {
     this.dataService.getGames().subscribe(temp => { this.games = temp;});
   }
 
-  title = 'Win/Loss Ratio';
-   type = 'PieChart';
-   data = [
-      ['win', 45.0],
-      ['Loss', 26.8],
-   ];
-   columnNames = ['Win', 'Loss'];
-   options = {    
-   };
-   width = 550;
-   height = 400;
-
-}
-  function drawChart() {
-    var data = new google.visualization.DataTable();
+    
+    
   
-  }
+}

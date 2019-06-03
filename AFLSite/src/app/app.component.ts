@@ -36,9 +36,9 @@ sayText()
   if(this.speak)
   {
   var msg = new SpeechSynthesisUtterance(speak);
+  window.speechSynthesis.speak(msg);
   }
- window.speechSynthesis.speak(msg);
- speak = ""
+ speak;
 
 
 }
