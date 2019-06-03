@@ -5,7 +5,6 @@ import {HttpClient} from '@angular/common/http';
 import {Team} from './Team';
 import {Game} from './Game';
 import{Tip} from './Tip';
-import {Ladder} from './Ladder';
 
 
 import { analyzeAndValidateNgModules } from '@angular/compiler';
