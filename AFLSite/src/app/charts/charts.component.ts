@@ -58,6 +58,7 @@ avgBehinds: number;
         type: 'pie',
         data: {
         datasets: [{backgroundColor: ["#00bbff", "#ff0000"],
+        label: ['win', 'Loss'],
         data: this.winLoss
       }],
     },
